@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Search, User, Heart, ShoppingBag, Menu, X, ChevronDown } from 'lucide-react';
 import { navLinks } from '@/data/navigation';
 
@@ -8,6 +8,7 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const dropdownTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -60,7 +61,7 @@ export function Navbar() {
                 >
                   <Link
                     to={link.href}
-                    className="nav-link flex items-center gap-1 py-2"
+                    className={`nav-link flex items-center gap-1 py-2 ${location.pathname === link.href ? '!text-temple-red border-b-2 border-temple-red' : ''}`}
                   >
                     {link.label}
                     {link.children && (
@@ -153,7 +154,7 @@ export function Navbar() {
                   <Link
                     to={link.href}
                     onClick={() => !link.children && setIsMobileOpen(false)}
-                    className="block py-3 text-sm font-body font-medium uppercase tracking-[0.12em] text-brown hover:text-temple-red transition-colors"
+                    className={`block py-3 text-sm font-body font-medium uppercase tracking-[0.12em] hover:text-temple-red transition-colors ${location.pathname === link.href ? 'text-temple-red' : 'text-brown'}`}
                   >
                     {link.label}
                   </Link>
