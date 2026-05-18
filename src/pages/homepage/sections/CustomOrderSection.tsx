@@ -18,7 +18,7 @@ export function CustomOrderSection() {
             Share your reference, preferred material, size, and budget. Our team will help you create a meaningful statue for your space.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <a href="/custom-orders" className="inline-flex items-center gap-2 px-7 py-3.5 bg-temple-red text-cream text-sm font-body font-semibold uppercase tracking-[0.1em] rounded-md transition-all duration-300 hover:bg-deep-red active:scale-[0.97]">
+            <a href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 bg-temple-red text-cream text-sm font-body font-semibold uppercase tracking-[0.1em] rounded-md transition-all duration-300 hover:bg-deep-red active:scale-[0.97]">
               Start Custom Order
             </a>
             <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-7 py-3.5 border border-brown text-brown text-sm font-body font-semibold uppercase tracking-[0.1em] rounded-md transition-all duration-300 hover:bg-brown hover:text-cream active:scale-[0.97]">

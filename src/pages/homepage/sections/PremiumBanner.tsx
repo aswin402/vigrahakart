@@ -41,7 +41,7 @@ export function PremiumBanner() {
             </p>
 
             <a
-              href="/collections"
+              href="/shop"
               className="inline-flex items-center gap-2 px-7 py-3.5 bg-temple-red text-cream text-sm font-body font-semibold uppercase tracking-[0.1em] rounded-md transition-all duration-300 hover:bg-terracotta active:scale-[0.97]"
             >
               View Premium Collection

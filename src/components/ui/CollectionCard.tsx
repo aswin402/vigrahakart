@@ -8,7 +8,7 @@ interface CollectionCardProps {
 export function CollectionCard({ collection }: CollectionCardProps) {
   return (
     <a
-      href={`/collections/${collection.slug}`}
+      href="/shop"
       className="group block relative overflow-hidden rounded-lg border border-border bg-ivory transition-all duration-300 hover:shadow-[0_4px_24px_oklch(0.78_0.045_75/0.3)]"
     >
       {/* Image */}

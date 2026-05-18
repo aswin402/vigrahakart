@@ -85,7 +85,7 @@ export function HeroSection() {
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
-                href="/custom-orders"
+                href="/contact"
                 className="inline-flex items-center gap-2 px-7 py-3.5 border border-brown text-brown text-sm font-body font-semibold uppercase tracking-[0.1em] rounded-md transition-all duration-300 hover:bg-brown hover:text-cream active:scale-[0.97]"
               >
                 Custom Statue Orders
