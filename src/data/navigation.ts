@@ -22,18 +22,17 @@ export const footerColumns: FooterColumn[] = [
   {
     title: 'Collections',
     links: [
-      { label: 'Ganesha Statues', href: '/collections/ganesha-statues' },
-      { label: 'Buddha Statues', href: '/collections/buddha-statues' },
-      { label: 'Marble Statues', href: '/collections/marble-statues' },
-      { label: 'Bronze Statues', href: '/collections/bronze-statues' },
-      { label: 'Garden Sculptures', href: '/collections/garden-sculptures' },
+      { label: 'Ganesha Statues', href: '/shop?category=ganesha-statues' },
+      { label: 'Buddha Statues', href: '/shop?category=buddha-statues' },
+      { label: 'Marble Statues', href: '/shop?category=marble-statues' },
+      { label: 'Bronze Statues', href: '/shop?category=bronze-statues' },
+      { label: 'Garden Sculptures', href: '/shop?category=garden-sculptures' },
     ],
   },
   {
     title: 'Support',
     links: [
-      { label: 'Shipping Policy', href: '/shipping' },
-      { label: 'Returns', href: '/returns' },
+      { label: 'Shipping & Returns', href: '/shipping-returns' },
       { label: 'FAQ', href: '/faq' },
       { label: 'Privacy Policy', href: '/privacy' },
       { label: 'Terms & Conditions', href: '/terms' },

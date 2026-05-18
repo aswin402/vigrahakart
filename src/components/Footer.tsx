@@ -26,14 +26,16 @@ export function Footer() {
             {/* Social Icons */}
             <div className="flex items-center gap-3">
               {[
-                { icon: Globe, label: 'Instagram' },
-                { icon: Heart, label: 'Facebook' },
-                { icon: MessageCircle, label: 'Twitter' },
-                { icon: Play, label: 'YouTube' },
-              ].map(({ icon: Icon, label }) => (
+                { icon: Globe, label: 'Instagram', url: 'https://instagram.com' },
+                { icon: Heart, label: 'Facebook', url: 'https://facebook.com' },
+                { icon: MessageCircle, label: 'Twitter', url: 'https://twitter.com' },
+                { icon: Play, label: 'YouTube', url: 'https://youtube.com' },
+              ].map(({ icon: Icon, label, url }) => (
                 <a
                   key={label}
-                  href="#"
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={label}
                   className="w-9 h-9 flex items-center justify-center rounded-full border border-sand/20 text-sand/60 hover:bg-temple-red hover:border-temple-red hover:text-cream transition-all duration-200"
                 >
@@ -102,10 +104,10 @@ export function Footer() {
               Terms
             </Link>
             <Link
-              to="/shipping"
+              to="/shipping-returns"
               className="text-xs text-sand/50 hover:text-cream transition-colors"
             >
-              Shipping
+              Shipping & Returns
             </Link>
           </div>
         </div>

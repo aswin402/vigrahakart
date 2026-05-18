@@ -95,33 +95,37 @@ export function Navbar() {
 
             {/* Right Icons */}
             <div className="flex items-center gap-2 md:gap-3">
-              <button
+              <Link
+                to="/search"
                 aria-label="Search"
                 className="hidden sm:flex w-9 h-9 items-center justify-center rounded-full text-muted-brown hover:text-temple-red hover:bg-warm-beige transition-all duration-200"
               >
                 <Search className="w-[18px] h-[18px]" />
-              </button>
-              <button
+              </Link>
+              <Link
+                to="/account"
                 aria-label="Account"
                 className="hidden sm:flex w-9 h-9 items-center justify-center rounded-full text-muted-brown hover:text-temple-red hover:bg-warm-beige transition-all duration-200"
               >
                 <User className="w-[18px] h-[18px]" />
-              </button>
-              <button
+              </Link>
+              <Link
+                to="/wishlist"
                 aria-label="Wishlist"
                 className="hidden md:flex w-9 h-9 items-center justify-center rounded-full text-muted-brown hover:text-temple-red hover:bg-warm-beige transition-all duration-200"
               >
                 <Heart className="w-[18px] h-[18px]" />
-              </button>
-              <button
+              </Link>
+              <Link
+                to="/cart"
                 aria-label="Cart"
                 className="relative w-9 h-9 flex items-center justify-center rounded-full text-muted-brown hover:text-temple-red hover:bg-warm-beige transition-all duration-200"
               >
                 <ShoppingBag className="w-[18px] h-[18px]" />
                 <span className="absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full bg-temple-red text-cream text-[9px] font-bold flex items-center justify-center">
-                  0
+                  2
                 </span>
-              </button>
+              </Link>
 
               {/* Mobile Hamburger */}
               <button
@@ -177,10 +181,10 @@ export function Navbar() {
 
               {/* Mobile Icons */}
               <div className="border-t border-border pt-5 mt-4 flex items-center gap-4">
-                <button className="flex items-center gap-2 text-sm text-muted-brown hover:text-temple-red transition-colors">
+                <Link to="/search" className="flex items-center gap-2 text-sm text-muted-brown hover:text-temple-red transition-colors">
                   <Search className="w-4 h-4" />
                   Search
-                </button>
+                </Link>
                 <button className="flex items-center gap-2 text-sm text-muted-brown hover:text-temple-red transition-colors">
                   <User className="w-4 h-4" />
                   Account

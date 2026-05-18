@@ -1,5 +1,6 @@
 import { Heart, Eye, Star, ShoppingBag } from 'lucide-react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import type { ShopProduct } from '@/types';
 
 interface ShopProductCardProps {
@@ -39,7 +40,7 @@ export function ShopProductCard({ product, viewMode = 'grid' }: ShopProductCardP
     return (
       <div className="group flex gap-4 md:gap-6 bg-ivory border border-border/50 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-[0_4px_24px_oklch(0.78_0.045_75/0.25)]">
         {/* Image */}
-        <div className="relative w-32 sm:w-44 md:w-52 shrink-0 overflow-hidden">
+        <Link to={`/product/${product.id}`} className="relative w-32 sm:w-44 md:w-52 shrink-0 overflow-hidden block">
           <img
             src={product.image}
             alt={product.name}
@@ -51,7 +52,7 @@ export function ShopProductCard({ product, viewMode = 'grid' }: ShopProductCardP
               {product.badge}
             </span>
           )}
-        </div>
+        </Link>
 
         {/* Content */}
         <div className="flex-1 py-4 pr-4 flex flex-col justify-between">
@@ -59,9 +60,11 @@ export function ShopProductCard({ product, viewMode = 'grid' }: ShopProductCardP
             <p className="text-[10px] font-body uppercase tracking-[0.12em] text-temple-red mb-1">
               {product.category}
             </p>
-            <h3 className="text-sm sm:text-base font-heading font-semibold text-deep-brown mb-1">
-              {product.name}
-            </h3>
+            <Link to={`/product/${product.id}`}>
+              <h3 className="text-sm sm:text-base font-heading font-semibold text-deep-brown mb-1 hover:text-temple-red transition-colors">
+                {product.name}
+              </h3>
+            </Link>
             <p className="text-xs text-muted-brown mb-2">{product.material}</p>
             <div className="flex items-center gap-2 mb-3">
               <RatingStars rating={product.rating} />
@@ -93,7 +96,7 @@ export function ShopProductCard({ product, viewMode = 'grid' }: ShopProductCardP
   return (
     <div className="group relative bg-ivory border border-border/50 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-[0_4px_24px_oklch(0.78_0.045_75/0.25)]">
       {/* Image Container */}
-      <div className="relative aspect-[4/5] overflow-hidden bg-warm-beige/40">
+      <Link to={`/product/${product.id}`} className="relative aspect-[4/5] overflow-hidden bg-warm-beige/40 block">
         <img
           src={product.image}
           alt={product.name}
@@ -130,7 +133,7 @@ export function ShopProductCard({ product, viewMode = 'grid' }: ShopProductCardP
         >
           <Eye className="w-4 h-4" />
         </button>
-      </div>
+      </Link>
 
       {/* Content */}
       <div className="p-4">
@@ -140,9 +143,11 @@ export function ShopProductCard({ product, viewMode = 'grid' }: ShopProductCardP
         </p>
 
         {/* Name */}
-        <h3 className="text-[13px] font-heading font-semibold text-deep-brown mb-1 line-clamp-1">
-          {product.name}
-        </h3>
+        <Link to={`/product/${product.id}`}>
+          <h3 className="text-[13px] font-heading font-semibold text-deep-brown mb-1 line-clamp-1 hover:text-temple-red transition-colors">
+            {product.name}
+          </h3>
+        </Link>
 
         {/* Material */}
         <p className="text-xs text-muted-brown mb-2">{product.material}</p>

@@ -1,5 +1,6 @@
 import { Heart } from 'lucide-react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import type { Product } from '@/types';
 
 interface ProductCardProps {
@@ -19,19 +20,21 @@ export function ProductCard({ product }: ProductCardProps) {
   };
 
   return (
-    <div className="group relative bg-ivory border border-border rounded-lg overflow-hidden transition-all duration-300 hover:shadow-[0_4px_24px_oklch(0.78_0.045_75/0.3)]">
+    <div className="group relative bg-ivory border border-border rounded-lg overflow-hidden transition-all duration-300 hover:shadow-[0_4px_24px_oklch(0.78_0.045_75/0.3)] flex flex-col h-full">
       {/* Image Container */}
       <div className="relative aspect-[4/5] overflow-hidden bg-warm-beige">
-        <img
-          src={product.image}
-          alt={product.name}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-          loading="lazy"
-        />
+        <Link to={`/product/${product.id}`} className="block w-full h-full">
+          <img
+            src={product.image}
+            alt={product.name}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
+          />
+        </Link>
 
         {/* Badge */}
         {product.badge && (
-          <span className="absolute top-3 left-3 px-3 py-1 text-[10px] font-body font-semibold uppercase tracking-[0.12em] bg-temple-red text-cream rounded-sm">
+          <span className="absolute top-3 left-3 pointer-events-none px-3 py-1 text-[10px] font-body font-semibold uppercase tracking-[0.12em] bg-temple-red text-cream rounded-sm z-10">
             {product.badge}
           </span>
         )}
@@ -40,7 +43,7 @@ export function ProductCard({ product }: ProductCardProps) {
         <button
           onClick={() => setIsWishlisted(!isWishlisted)}
           aria-label={isWishlisted ? 'Remove from wishlist' : 'Add to wishlist'}
-          className="absolute top-3 right-3 w-8 h-8 flex items-center justify-center rounded-full bg-cream/80 backdrop-blur-sm transition-all duration-200 hover:bg-cream"
+          className="absolute top-3 right-3 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-cream/80 backdrop-blur-sm transition-all duration-200 hover:bg-cream"
         >
           <Heart
             className={`w-4 h-4 transition-colors duration-200 ${
@@ -53,13 +56,15 @@ export function ProductCard({ product }: ProductCardProps) {
       </div>
 
       {/* Content */}
-      <div className="p-4">
-        <h3 className="text-[11px] font-body font-semibold uppercase tracking-[0.12em] text-brown mb-1 line-clamp-1">
-          {product.name}
-        </h3>
+      <div className="p-4 flex flex-col flex-grow">
+        <Link to={`/product/${product.id}`} className="block mb-1">
+          <h3 className="text-[11px] font-body font-semibold uppercase tracking-[0.12em] text-brown line-clamp-1 hover:text-temple-red transition-colors">
+            {product.name}
+          </h3>
+        </Link>
         <p className="text-xs text-muted-brown mb-3">{product.material}</p>
 
-        <div className="flex items-center gap-2 mb-4">
+        <div className="flex items-center gap-2 mb-4 mt-auto">
           <span className="text-base font-heading font-semibold text-deep-brown">
             {formatPrice(product.price)}
           </span>
